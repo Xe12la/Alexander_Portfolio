@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexander Surban Auman</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/icons8-c-16.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta&family=Open+Sans:wght@300&family=Oswald&family=Varela&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #474e5d;
+      }
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #ffff;
+        top: 0;
+        bottom: 0;
+        left: 20%;
+        margin-left: -3px;
+        z-index: -2;
+      }
+
+      .container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .container::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: #474e5d;
+        border: 4px solid #FF9F55;
+        top: 15px;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 20%;
+      }
+
+      .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: -1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+      }
+
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: -1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .right::after {
+        left: -16px;
+      }
+
+      .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .container {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .container::before {
+          left: 50px;
+          border: medium solid white;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent white transparent transparent;
+        }
+
+        /* Make sure all circles are at the same spot */
+        .left::after, .right::after {
+        left: 15px;
+        }
+        .right {
+          left: 0%;
+        }
+      } 
+
+      .gitHubLink{
+        width: 18px;
+        height: 18px;
+      }
+      .screenshoot {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 10px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 1400px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-images {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .modal-images img {
+        width: 50%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-contents">
+        <a href="index.html">
+          <img
+            src="Alexander Logo.png"
+            alt="logo-of-alexander"
+            loading="eager"
+          />
+        </a>
+
+        <nav class="site-nav">
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#tools">Tools</a>
+          <a href="certifications.html">Certificates</a> 
+          <a href="project.html">Projects</a>
+          <a href="index.html#contact">Contact Me</a>
+        </nav>
+      </div>
+    </header>
+
+    <section id="projects" class="projects-section">
+      <a href="#projects" title="projects-page"></a>
+
+      <h1 style="color: #ffff;">Projects participated</h1>
+
+      <div class="timeline">
+        <div class="container right">
+          <div class="content">
+            <h2>2022</h2>
+            <p>
+              <span style="font-weight: bolder; font-size: 25px; margin-right: 10px;">E-Wallet</span>
+              <a href="https://github.com/Xe12la/E-Wallet.git" target="_blank" rel="noopener noreferrer">
+                <img src="assets/link.png" alt="gitHubLink" class="gitHubLink">
+              </a>
+                  
+              <br><br> This web application serves as a professional e-wallet solution, offering comprehensive CRUD functionality. Users can securely deposit funds and easily transfer money to other users within the platform. The application is built with ASP.NET MVC and C#, leveraging a built-in database for efficient data management. This robust backend ensures seamless and reliable financial transactions.
+            </p>
+            <p>Click the image to see sample Screenshot. <img src="assets/image.png" alt="" class="screenshoot" id="openModal1"></p>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+            <h2>2022</h2>
+            <p>
+              <span style="font-weight: bolder; font-size: 25px; margin-right: 10px;">Online Shopping - A's E-Game Shop</span>
+              <a href="https://github.com/Xe12la/OnlineShopping.git" target="_blank" rel="noopener noreferrer">
+                <img src="assets/link.png" alt="gitHubLink" class="gitHubLink">
+              </a>
+                  
+              <br><br> A web application with a features of: Entering product, Deleting product, Orderign process, Updating profile. This is a simple CRUD web application with 2 users which is the seller and the buyer of the item.
+            </p>
+            <p>Click the image to see sample Screenshot. <img src="assets/image.png" alt="" class="screenshoot" id="openModal2"></p>
+          </div>
+        </div>      
+        <div class="container right">
+          <div class="content">
+            <h2>2024</h2>
+            <p>
+              <span style="font-weight: bolder; font-size: 25px; margin-right: 10px;">BlueJobs</span>
+              <a href="https://github.com/Xe12la/BlueJobs-Capstone.git" target="_blank" rel="noopener noreferrer">
+                <img src="assets/link.png" alt="gitHubLink" class="gitHubLink">
+              </a>
+                  
+              <br><br> A job hunting website specifically for a skilled workers(SW). Where the service seeker and industry can hire a SW to fix or to provide a job. A complete application base on our capstone features and guidelines.
+            </p>
+            <p>Click the image to see sample Screenshot. <img src="assets/image.png" alt="" class="screenshoot" id="openModal3"></p>
+          </div>
+        </div>     
+      </div>
+
+      <footer style="color: #ffff; margin-left: 6%;">Upcoming projects will be posted here.</footer>
+      <div class="social-links">
+        <a href="https://github.com/Xe12la" target="_blank" class="github" rel="noopener">github</a>
+        <a href="https://www.linkedin.com/in/alexander-auman-794462140" target="_blank" class="linkedin" rel="noopener">linkedin</a>
+        <a href="https://www.facebook.com/profile.php?id=100008702764007" target="_blank" class="facebook" rel="noopener">facebook</a>
+      </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-images">
+          <img src="assets/e-wallet1.png" alt="Screenshot 1">
+          <img src="assets/e-wallet.png" alt="Screenshot 2">
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-images">
+          <img src="assets/onlineShopping.png" alt="Screenshot 1">
+          <img src="assets/onlineshopping1.png" alt="Screenshot 2">
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal3" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-images">
+          <img src="assets/bluejobs1.png" alt="Screenshot 1">
+          <img src="assets/bluejobs2.png" alt="Screenshot 2">
+        </div>
+      </div>
+    </div>
+
+    <script>
+       // Get the modal elements
+       var modal1 = document.getElementById("myModal1");
+       var modal2 = document.getElementById("myModal2");
+       var modal3 = document.getElementById("myModal3");
+
+      // Get the image elements and add event listeners
+      var img1 = document.getElementById("openModal1");
+      var img2 = document.getElementById("openModal2");
+      var img3 = document.getElementById("openModal3");
+
+      var closeModal1 = modal1.getElementsByClassName("close")[0];
+      var closeModal2 = modal2.getElementsByClassName("close")[0];
+      var closeModal3 = modal3.getElementsByClassName("close")[0];
+
+      // Open modals
+      img1.onclick = function() {
+        modal1.style.display = "block";
+      }
+
+      img2.onclick = function() {
+        modal2.style.display = "block";
+      }
+
+      img3.onclick = function() {
+        modal3.style.display = "block";
+      }
+
+      // Close modals
+      closeModal1.onclick = function() {
+        modal1.style.display = "none";
+      }
+
+      closeModal2.onclick = function() {
+        modal2.style.display = "none";
+      }
+
+      closeModal3.onclick = function() {
+        modal3.style.display = "none";
+      }
+
+      // Close modals when clicking outside of them
+      window.onclick = function(event) {
+        if (event.target == modal1) {
+          modal1.style.display = "none";
+        } else if (event.target == modal2) {
+          modal2.style.display = "none";
+        } else if (event.target == modal3) {
+          modal3.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

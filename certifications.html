@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexander Surban Auman</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/icons8-c-16.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta&family=Open+Sans:wght@300&family=Oswald&family=Varela&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-contents">
+        <a href="index.html">
+          <img
+            src="Alexander Logo.png"
+            alt="logo-of-alexander"
+            loading="eager"
+          />
+        </a>
+
+        <nav class="site-nav">
+          <a
+            href="index.html#about"
+            >About</a
+          >
+          <a
+            href="index.html#skills"
+            >Skills</a
+          >
+          <a
+            href="index.html#tools"
+            >Tools</a
+          >
+          <a href="certifications.html">Certificates</a>
+          <a href="project.html">Projects</a>
+          <a
+            href="index.html#contact"
+            >Contact Me</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <section id="certificates" class="certificates-section">
+      <a href="#certificates" title="certificates-page"></a>
+
+      <h2>Certificates</h1>
+      
+      <div id="certificates-carousel" class="certificates-carousel">
+        <button id="prev-btn" class="prev-btn">&lt;</button>
+        <div class="certificates-wrapper">
+          <!-- Your certificate articles go here -->
+
+          <article class="certificates">
+            <div class="certificates-container">
+              <img
+                src="assets/certificate.Frontend Essentials Bootcamp.png"
+                alt="Frontend Essentials Bootcamp Certificate"
+                loading="lazy"
+              />
+              <div class="certificates-description">
+                <h2>Certificate of Completion: Frontend Bootcamp Essentials</h2>
+                <p>(March 2024)</p>
+    
+                <p>
+                  Click this icon below to view.
+                </p>
+
+                
+                <div class="certificates-links">
+                  <a
+                    href="https://drive.google.com/file/d/10y_s8Ib9GPlgWtID1xn917cY9Jy2E3Uo/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      src="assets/link.png"
+                      alt="MSTConnect-Certificate-web"
+                      loading="lazy"
+                      class="browser-link"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>   
+
+          <article class="certificates">
+            <div class="certificates-container">
+              <img
+                src="assets/AWS Volunteer.png"
+                alt="Frontend Essentials Bootcamp Certificate"
+                loading="lazy"
+              />
+              <div class="certificates-description">
+                <h2>Certificate of Recognition: AWS Community Day</h2>
+                <p>(August 2023)</p>    
+                <p>
+                  Click this icon below to view.
+                </p>
+                
+                
+                <div class="certificates-links">
+                  <a
+                    href="https://drive.google.com/file/d/1bNPQ2-ddksAcalc0yIlKezA0ganb4ofg/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      src="assets/link.png"
+                      alt="MSTConnect-Certificate-web"
+                      loading="lazy"
+                      class="browser-link"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>            
+          
+        </div>
+        <button id="next-btn" class="next-btn">&gt;</button>        
+      </div>
+
+      
+
+    <div class="social-links">
+      <a href="https://github.com/Xe12la" target="_blank" class="github" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/in/alexander-auman-794462140" target="_blank" class="linkedin" rel="noopener">linkedin</a>
+      <a href="https://www.facebook.com/profile.php?id=100008702764007" target="_blank" class="facebook" rel="noopener">facebook</a>
+    </div>
+
+  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const certificatesWrapper = document.querySelector('.certificates-wrapper');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      let currentIndex = 0;
+      const intervalTime = 5000; // 5 seconds
+
+      function nextCertificate() {
+        const certificates = document.querySelectorAll('.certificates');
+        if (currentIndex < certificates.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // Reset to first certificate
+        }
+        updateTransform();
+      }
+
+      function updateTransform() {
+        const certificateWidth = certificatesWrapper.offsetWidth;
+        const newPosition = -currentIndex * certificateWidth;
+        certificatesWrapper.style.transition = 'transform 0.5s ease';
+        certificatesWrapper.style.transform = `translateX(${newPosition}px)`;
+      }
+
+      // Move to next certificate every 5 seconds
+      setInterval(nextCertificate, intervalTime);
+
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = certificatesWrapper.childElementCount - 1; // Move to last certificate
+        }
+        updateTransform();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        const certificates = document.querySelectorAll('.certificates');
+        if (currentIndex < certificates.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // Reset to first certificate
+        }
+        updateTransform();
+      });
+
+    });
+
+  </script>
+</html>
